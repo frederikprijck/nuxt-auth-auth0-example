@@ -38,8 +38,21 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-
+    // axios is required by @nuxtjs/auth
+    '@nuxtjs/axios',
+    // https://auth.nuxtjs.org
+    '@nuxtjs/auth'
   ],
+
+  auth: {
+    strategies: {
+      auth0: {
+        domain: '',
+        client_id: '',
+        audience: ''
+      }
+    }
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
