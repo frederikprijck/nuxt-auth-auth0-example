@@ -41,15 +41,19 @@ export default {
     // axios is required by @nuxtjs/auth
     '@nuxtjs/axios',
     // https://auth.nuxtjs.org
-    '@nuxtjs/auth'
+    '@nuxtjs/auth-next'
   ],
 
   auth: {
     strategies: {
       auth0: {
         domain: '',
-        client_id: '',
-        audience: ''
+        clientId: '',
+        audience: '',
+        scope: ['openid', 'profile'],
+        responseType: 'code',
+        grantType: 'authorization_code',
+        codeChallengeMethod: 'S256'
       }
     }
   },
